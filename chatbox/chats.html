@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Page</title>
+    <style>
+        /* Chatbot Page Styling */
+        .chatbot-page {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #333;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            height: 80vh;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-y: auto;
+        }
+        
+        
+
+        .chat-header {
+            display: flex;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #444;
+        }
+
+        .chat-header img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .chat-header .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Message Area */
+        .chat-area {
+            flex-grow: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            color: #bbb;
+        }
+
+        .chat-area img {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+
+        .chat-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: calc(100% - 40px);
+            margin: 10px;
+        }
+
+        /* 3D Emoji Animation */
+        .emoji-center {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 100px;
+            animation: rotateAndScale 2s infinite;
+            transform: perspective(500px) rotateX(0deg);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .emoji-center:hover {
+            transform: perspective(500px) rotateX(360deg);
+        }
+
+        /* Animation */
+        @keyframes rotateAndScale {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+            }
+            50% {
+                transform: scale(1.2) rotate(360deg);
+            }
+        }
+
+        .message-input {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #222;
+            border-radius: 20px;
+            margin-top: 20px;
+            animation: slideUp 0.3s ease-out;
+        }
+
+        .message-input textarea {
+            flex-grow: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            background-color: #444;
+            color: white;
+            outline: none;
+            white-space: pre-wrap;
+            resize: none;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .message-input textarea:focus {
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        }
+
+        .message-input button {
+            background-color: #007bff;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .message-input button:hover {
+            background-color: #0056b3;
+        }
+
+        .message-input button svg {
+            fill: white;
+        }
+
+        /* Animation */
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Optional Scrollbar Styling 
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #555;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #888;
+        }*/
+
+        .chat-send-btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chatbot-page" id="chatbot-page">
+    <!-- Chat Header -->
+    <div class="chat-header">
+        <div class="user-info">
+            <img id="user-profile-img" src="" alt="Profile Image">
+            <span id="user-name" style="color: #26ff00;"></span>
+        </div>
+        <span class="slider"></span>
+    </div>
+
+    <!-- Chat Area -->
+    <div class="chat-area">
+        <!-- Emoji Center -->
+        <div class="emoji-center">✌️</div>
+        <p style="text-align: center; color: #888;">Chat With TezienAu</p>
+    </div>
+
+    <!-- Message Input -->
+    <div class="message-input">
+        <textarea placeholder="Write a message..." rows="1"></textarea>
+        <button>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M2 21l21-9-21-9v7l15 2-15 2v7z"></path>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<script></script>
+    
+<script src="script.js"></script>
+<script src="response.js"></script>
+</body>
+</html>
